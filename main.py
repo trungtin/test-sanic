@@ -5,17 +5,16 @@ import json
 import functools
 from datetime import datetime
 
-from dotenv import load_dotenv
 from api.chat_models import ModelsView
 
 from api.injectable import Realm, RequestContext
 
-load_dotenv()
 
 def dumps_default(obj):
     if isinstance(obj, datetime):
         return obj.isoformat()
     raise TypeError
+
 
 dumps = functools.partial(json.dumps, default=dumps_default)
 
