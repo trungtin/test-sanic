@@ -1,0 +1,2 @@
+sanic[ext]==23.3.0
+sanic-ext==23.3.0
